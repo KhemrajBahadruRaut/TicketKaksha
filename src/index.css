@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+
+
+
+
+
+@font-face {
+  font-family: 'Satisfy';
+  src: url('/src/assets/fonts/Satisfy-Regular.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
