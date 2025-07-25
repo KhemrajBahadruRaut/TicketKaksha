@@ -112,20 +112,19 @@ const Nav = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-  <div className="md:hidden fixed top-0 left-0 w-full  py-6 bg-[#DCE9F5] flex flex-col justify-center items-center z-40 space-y-10 text-[#3159A8] text-xl font-medium">
-    {navItems.map((item) => (
-      <a
-        key={item.id}
-        href={`/${item.name.toLowerCase().replace(/\s+/g, "")}`}
-        className="hover:text-[#1e3a8a] hover:scale-105 transition-all  text-[#2E6FB7]"
-        onClick={() => setMenuOpen(false)}
-      >
-        {item.name}
-      </a>
-    ))}
-  </div>
-)}
-
+          <div className="md:hidden fixed top-0 left-0 w-full  py-6 bg-[#DCE9F5] flex flex-col justify-center items-center z-40 space-y-10 text-[#3159A8] text-xl font-medium">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.name.toLowerCase().replace(/\s+/g, "")}`}
+                className="hover:text-[#1e3a8a] hover:scale-105 transition-all  text-[#2E6FB7]"
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
