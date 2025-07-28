@@ -27,7 +27,7 @@ const AboutUs = () => {
   return (
     <div className="" id="aboutus">
       <h1
-        className="text-4xl text-[#2E6FB7] font-serif font-semibold text-center mt-10"
+        className="text-4xl text-[#2E6FB7] font-semibold text-center mt-10"
         style={{ fontFamily: "Satisfy" }}
       >
         About Us
@@ -78,10 +78,10 @@ const AboutUs = () => {
         </div>
 
         {/* Right - Text */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 pb-5">
           <div className="space-y-5 text-gray-600 text-justify text-sm md:text-base">
             <p>
-              At Ticket कक्ष Travels and Tours Pvt. Ltd., we specialize in
+              At <span style={{ fontFamily: "yeseva" }} className="">Ticket</span> <span style={{ fontFamily: "gotu" }}>कक्ष</span>  Travels and Tours Pvt. Ltd., we specialize in
               providing fast, reliable, and affordable air ticketing services
               for both domestic and international flights. Whether you're
               planning a short trip within Nepal or a long journey abroad, our
@@ -94,7 +94,7 @@ const AboutUs = () => {
               Our commitment goes beyond merely booking flights. We offer
               personalized support, discounts for students and groups, and
               assistance with visas and hotel reservations when necessary.
-              Trusted by travelers across Nepal, Ticket कक्ष is proud to be your
+              Trusted by travelers across Nepal, Ticket <span style={{ fontFamily: "gotu" }}>कक्ष</span>  is proud to be your
               reliable travel partner; making every journey easier, smarter,
               and more enjoyable.{" "}
             </p>

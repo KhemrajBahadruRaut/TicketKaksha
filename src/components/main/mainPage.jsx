@@ -166,17 +166,8 @@ const TravelAnimation = () => {
     }
   ];
 
-  const createFallbackSvg = (name) => {
-    return `data:image/svg+xml,${encodeURIComponent(`
-      <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100%" height="100%" fill="#f0f0f0"/>
-        <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#666" font-size="16">${name}</text>
-      </svg>
-    `)}`;
-  };
-
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center " id='home'>
       <div className="relative w-full max-w-6xl bg-white overflow-hidden">
         
         {/* Mobile/Tablet Carousel (up to 1128px) */}
@@ -212,8 +203,7 @@ const TravelAnimation = () => {
             {/* Enhanced Text Overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none z-10">
               <div className={`
-                backdrop-blur-[2px] rounded-2xl  
-px-6 py-2 
+                backdrop-blur-[2px] rounded-2xl px-6 py-2 
                 transition-all duration-1000 ease-out
                 ${isTypingComplete ? 'scale-105 shadow-3xl' : 'scale-100'}
               `}>
@@ -241,14 +231,14 @@ px-6 py-2
                         <span className="text-[#FF6B35] animate-pulse ml-1 font-bold">|</span>
                       )}
                     </span>{' '}
-                    <span className="text-white drop-shadow-2xl font-light"  style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.5)' }} >Freely.</span>
+                    <span className="text-white drop-shadow-2xl font-light"  >Freely.</span>
                   </h1>
                 </div>
                 
                 {/* Enhanced animated underline */}
                 <div className={`
                   mt-8 h-1 bg-gradient-to-r from-transparent via-[#FF6B35] to-transparent rounded-full
-                  transition-all duration-2000 ease-out
+                  transition-all duration-1000 ease-out
                   ${isTypingComplete ? 'w-full opacity-100 shadow-lg shadow-[#FF6B35]/50' : 'w-0 opacity-0'}
                 `}></div>
               </div>
@@ -316,7 +306,7 @@ px-6 py-2
                   width: config.width,
                   height: config.height,
                   clipPath: (isAnimating && (index === 1 || index === 2)) ? 'inset(0 0 8% 0)' : 'inset(0 0 0 0)',
-                  transition: 'clip-path 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                  transition: 'clip-path 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                 }}
               >
                 <img
@@ -349,7 +339,7 @@ px-6 py-2
                   width: config.width,
                   height: config.height,
                   clipPath: (isAnimating && (index === 1 || index === 2)) ? 'inset(8% 0 0 0)' : 'inset(0 0 0 0)',
-                  transition: 'clip-path 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                  transition: 'clip-path 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                 }}
               >
                 <img
@@ -368,12 +358,12 @@ px-6 py-2
           <div 
             className={`
               absolute top-[325px] left-[435px] transform -translate-x-1/2 -translate-y-1/2 
-              text-center transition-all duration-[1500ms] ease-in-out z-10 pointer-events-none
+              text-center transition-all duration-[500ms] ease-in-out z-10 pointer-events-none
               ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
             `}
             style={{ 
-              transitionDelay: isAnimating ? '1.8s' : '0s',
-              transition: 'opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+              transitionDelay: isAnimating ? '1s' : '0s',
+              transition: 'opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             }}
           >
             <h1 className="text-4xl font-bold m-0">

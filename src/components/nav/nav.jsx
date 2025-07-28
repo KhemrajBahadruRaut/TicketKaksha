@@ -33,17 +33,16 @@ const Nav = () => {
   ];
 
   return (
-    <div className="bg-[#DCE9F5] sticky top-0 z-[100] shadow-sm pb-8 md:pb-0 transition-shadow duration-300">
+    <div className="bg-[#DCE9F5] sticky top-0 z-[100] shadow-sm pb-8 md:pb-0 transition-shadow duration-300 " >
       <div className="relative py-5 container mx-auto px-4">
         {/* Logo */}
         <div
           className={`
-    flex items-center gap-2
-    transition-all duration-700 ease-[cubic-bezier(0.33,1,0.68,1)]
+    flex items-center gap-2 transition-all duration-700 ease-[cubic-bezier(0.33,1,0.68,1)]
     ${
       isScrolled
-        ? "fixed top-1 -translate-x-1/2 w-14 h-14 md:w-16 md:h-16"
-        : "absolute top-9 left-4 w-20 h-20 md:w-24 md:h-24"
+        ? "fixed top-2 -translate-x-1/2 w-14 h-14 md:w-20 md:h-14"
+        : "absolute top-6 left-4 w-25 h-20 md:w-28 md:h-24"
     } 
     rounded-b-4xl bg-[#DCE9F5] z-50 px-2
   `}
@@ -66,7 +65,7 @@ const Nav = () => {
       }
     `}
           >
-            Ticket कक्ष
+            <span style={{ fontFamily: "yeseva" }} className="">Ticket</span> <span style={{ fontFamily: "gotu" }}>कक्ष</span> 
           </span>
         </div>
 
@@ -101,7 +100,8 @@ const Nav = () => {
                     }
                     setMenuOpen(false);
                   }}
-                  className="flex items-center py-2 md:py-0 transition-all duration-300 hover:text-[#1e3a8a] hover:font-medium active:scale-95"
+                  className="flex items-center text-[15px] py-2 md:py-0 transition-all duration-300 hover:text-[#1e3a8a] hover:scale-95"
+                  style={{ fontFamily: "opensans" }}
                 >
                   {name}
                 </button>
@@ -119,6 +119,7 @@ const Nav = () => {
                 href={`#${item.name.toLowerCase().replace(/\s+/g, "")}`}
                 className="hover:text-[#1e3a8a] hover:scale-105 transition-all  text-[#2E6FB7]"
                 onClick={() => setMenuOpen(false)}
+                style={{ fontFamily: "opensans" }}
               >
                 {item.name}
               </a>

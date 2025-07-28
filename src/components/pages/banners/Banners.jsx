@@ -10,7 +10,7 @@ const airlines = [
   { name: "Korean Air", src: "/src/assets/airlines/korean.png" }
 ];
 
-const InfiniteMarquee = ({ children, speed = 50 }) => {
+const InfiniteMarquee = ({ children, speed = 60 }) => {
   return (
     <div className="overflow-hidden">
       <div 
