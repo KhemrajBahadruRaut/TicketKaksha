@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import WhatsAppBtn from '../whatsappbtn/WhatsAppBtn';
 
 const TravelAnimation = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -123,8 +124,8 @@ const TravelAnimation = () => {
       height: '350px'
     },
     { 
-      name: 'Taj Mahal', 
-      src: '/src/assets/main/kaksh_bg9.png',
+      name: 'Dubai Frame', 
+      src: '/src/assets/main/kaksh_bg8.png',
       width: '300px',
       height: '300px'
     },
@@ -135,8 +136,8 @@ const TravelAnimation = () => {
       height: '360px'
     },
     { 
-      name: 'Dubai Frame', 
-      src: '/src/assets/main/kaksh_bg8.png',
+      name: 'Taj Mahal', 
+            src: '/src/assets/main/kaksh_bg9.png',
       width: '300px',
       height: '230px'
     },
@@ -147,8 +148,8 @@ const TravelAnimation = () => {
       height: '230px'
     },
     { 
-      name: 'Eiffel Tower', 
-      src: '/src/assets/main/kaksh_bg15.png',
+      name: 'Burj Al Arab', 
+      src: '/src/assets/main/kaksh_bg13.png',
       width: '300px',
       height: '290px'
     },
@@ -159,15 +160,15 @@ const TravelAnimation = () => {
       height: '230px'
     },
     { 
-      name: 'Burj Al Arab', 
-      src: '/src/assets/main/kaksh_bg13.png',
+      name: 'Eiffel Tower', 
+      src: '/src/assets/main/kaksh_bg15.png',
       width: '300px',
       height: '350px'
     }
   ];
 
   return (
-    <div className="flex items-center justify-center " id='home'>
+    <div className="flex items-center justify-center" id='home' >
       <div className="relative w-full max-w-6xl bg-white overflow-hidden">
         
         {/* Mobile/Tablet Carousel (up to 1128px) */}
@@ -305,7 +306,7 @@ const TravelAnimation = () => {
                 style={{
                   width: config.width,
                   height: config.height,
-                  clipPath: (isAnimating && (index === 1 || index === 2)) ? 'inset(0 0 8% 0)' : 'inset(0 0 0 0)',
+                  clipPath: (isAnimating && (index === 1 || index === 2)) ? 'inset(0 0 10% 0)' : 'inset(0 0 0 0)',
                   transition: 'clip-path 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                 }}
               >
@@ -338,7 +339,7 @@ const TravelAnimation = () => {
                 style={{
                   width: config.width,
                   height: config.height,
-                  clipPath: (isAnimating && (index === 1 || index === 2)) ? 'inset(8% 0 0 0)' : 'inset(0 0 0 0)',
+                  clipPath: (isAnimating && (index === 1 || index === 2)) ? 'inset(10% 0 0 0)' : 'inset(0 0 0 0)',
                   transition: 'clip-path 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                 }}
               >
@@ -366,7 +367,7 @@ const TravelAnimation = () => {
               transition: 'opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             }}
           >
-            <h1 className="text-4xl font-bold m-0">
+            <h1 className="text-5xl font-bold m-0">
               <span className="text-gray-800">Book</span>{' '}
               <span className="italic text-[#2E6FB7]" style={{ fontFamily: "Satisfy, cursive" }}>Globally.</span>      
             </h1>
@@ -383,7 +384,7 @@ const TravelAnimation = () => {
               transition: 'opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             }}
           >
-            <h1 className="text-4xl font-bold m-0">        
+            <h1 className="text-5xl font-bold m-0">        
                <span className="italic text-[#2E6FB7]" style={{ fontFamily: "Satisfy, cursive" }}>Travel</span>{' '}
               <span className="text-gray-800">Freely.</span>
             </h1>
@@ -430,6 +431,8 @@ const TravelAnimation = () => {
           }
         }
       `}</style>
+
+        <WhatsAppBtn/>
     </div>
   );
 };

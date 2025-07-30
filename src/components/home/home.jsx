@@ -12,9 +12,6 @@ import Testimonials from "../pages/testimonials/Testimonials"
 
 
 
-
-
-
 const Home = () => {
   return (
     <div>
