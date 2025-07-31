@@ -1,42 +1,10 @@
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { MdTravelExplore } from 'react-icons/md';
 
-const destinations = [
-  {
-    title: "Agra, India",
-    description: "Home to the magnificent Taj Mahal, Agra is a blend of history and architecture.",
-    image: "/src/assets/popular/agra,india.png",
-  },
-  {
-    title: "Kathmandu, Nepal",
-    description: "The vibrant capital of Nepal, known for its temples and culture.",
-    image: "/src/assets/popular/nepal.png",
-  },
-  {
-    title: "Dubai",
-    description: "A modern marvel of skyscrapers, luxury shopping, and desert adventures.",
-    image: "/src/assets/popular/dubai.png",
-  },
-  {
-    title: "Bangkok, Thailand",
-    description: "Buzzing city full of life, food, temples, and floating markets.",
-    image: "/src/assets/popular/bangkok,thailand.png",
-  },
-  {
-    title: "Pisa, Italy",
-    description: "Famous for the Leaning Tower, Pisa is a historic gem in Tuscany.",
-    image: "/src/assets/popular/pisa,italy.png",
-  },
-  {
-    title: "Bali, Indonesia",
-    description: "A tropical paradise offering beaches, culture, and serenity.",
-    image: "/src/assets/popular/bali.png",
-  },
-];
-
-
+const API_URL = "http://localhost/TICKETKAKSHA/Backend/destination/get_destinations.php";
 
 const DestinationCard = ({ title, description, image, index }) => (
-
   <motion.div
     className="w-full sm:w-[300px] bg-white rounded-xl shadow-md p-4 m-3 cursor-pointer"
     initial="hidden"
@@ -63,33 +31,48 @@ const DestinationCard = ({ title, description, image, index }) => (
     <h3 className="text-xl font-semibold mb-1">{title}</h3>
     <p className="text-sm text-gray-600">{description}</p>
 
-    {/* <div className="flex justify-end mt-2">
-      <a href="#" className="text-blue-600 text-sm hover:opacity-70 transition-opacity duration-200">
-        See more..
-      </a>
-    </div> */}
-
     <div className="flex justify-center items-center mt-4">
       <motion.button
-  whileHover={{ scale: 1.05 }}
-  transition={{ type: "spring", stiffness: 300 }}
-  className="bg-[#2F8DCC] text-white px-10 py-1 rounded-xl hover:bg-blue-600 transition "
-  onClick={() => {
-    const contactSection = document.getElementById("contactus");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  }}
->
-  Contact Us
-</motion.button>
-
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 300 }}
+        className="bg-[#2F8DCC] text-white px-10 py-1 rounded-xl hover:bg-blue-600 transition"
+        onClick={() => {
+          const contactSection = document.getElementById("contactus");
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
+      >
+        Contact Us
+      </motion.button>
     </div>
   </motion.div>
 );
 
 const PopularDestinations = () => {
-  const visibleDestinations =  destinations.slice(0, 6);
+  const [destinations, setDestinations] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchDestinations();
+  }, []);
+
+  const fetchDestinations = async () => {
+    try {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+      if (data.success) {
+        const activeDestinations = data.destinations.filter(
+          (d) => d.is_active === '1' || d.is_active === 1
+        );
+        setDestinations(activeDestinations);
+      }
+    } catch (err) {
+      console.error("Failed to load destinations", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="px-6 py-10 text-center max-w-screen-xl mx-auto">
@@ -112,16 +95,30 @@ const PopularDestinations = () => {
         Explore our curated list of global destinations known for their beauty, history, and culture.
       </motion.p>
 
-      <motion.div
-        layout
-        className="flex flex-wrap justify-center items-stretch"
-      >
-        <AnimatePresence>
-          {visibleDestinations.map((dest, index) => (
-            <DestinationCard key={dest.title} {...dest} index={index} />
-          ))}
-        </AnimatePresence>
-      </motion.div>
+      {loading ? (
+        <div className="text-gray-600">Loading destinations...</div>
+    
+) : destinations.length === 0 ? (
+  <div className="flex flex-col items-center justify-center min-h-[300px] text-center text-gray-600 bg-gray-50 rounded-lg shadow-sm p-6 w-full">
+    <MdTravelExplore className="text-5xl mb-4 text-gray-400" />
+    <h3 className="text-xl font-semibold mb-2">No Destinations Found</h3>
+    <p className="text-sm">It looks like there are no active destinations at the moment. Please check back later!</p>
+  </div>
+      ) : (
+        <motion.div layout className="flex flex-wrap justify-center items-stretch">
+          <AnimatePresence>
+            {destinations.map((dest, index) => (
+              <DestinationCard
+                key={dest.id}
+                title={dest.title}
+                description={dest.description}
+                image={`http://localhost/TICKETKAKSHA/Backend/destination/${dest.image_path}`}
+                index={index}
+              />
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      )}
     </div>
   );
 };

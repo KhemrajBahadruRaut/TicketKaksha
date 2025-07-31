@@ -6,6 +6,7 @@ import ContactForm from "../pages/contactForm/ContactForm"
 import PopularDestinations from "../pages/destinations/PopularDestinations"
 import Footer from "../pages/footer/footer"
 import Services from "../pages/services/Services"
+import GetTestimonials from "../pages/testimonials/GetTestimonials"
 import Testimonials from "../pages/testimonials/Testimonials"
 
 
@@ -21,7 +22,8 @@ const Home = () => {
        <Nav/>
        <MainPage/>
        <AboutUs/>
-       <Testimonials/>
+       {/* <Testimonials/> */}
+       <GetTestimonials />
        <Services/>
        <Banners/>
        <PopularDestinations/>
