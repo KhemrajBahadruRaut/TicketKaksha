@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaArrowUp } from "react-icons/fa"; // You can use any icon you prefer
 
-function WhatsAppBtn() {
+
+
+const WhatsAppBtn = () => {
   const [showScroll, setShowScroll] = useState(false);
 
   // Show the button after scrolling down 300px
