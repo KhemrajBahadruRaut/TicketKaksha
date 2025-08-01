@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="relative">
       {/* Background Image Section */}
-      <div 
+      <div
         className="pt-70 sm:pt-48 pb-10 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/src/assets/footer/footerimage.png')",
@@ -23,27 +23,41 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-white">
             {/* Contact Us */}
             <div className="flex flex-col items-center">
-              <div className="bg-[#2F8DCC] p-4 rounded-full mb-4 hover:scale-105 transition-transform">
-                <FaPhoneAlt size={24} />
-              </div>
-              <h3 className="font-semibold text-lg">+977 9851155689</h3>
+              <a href="tel:+9779851155689">
+                <div className="bg-[#2F8DCC] p-4 rounded-full mb-4 hover:scale-105 transition-transform text-white">
+                  <FaPhoneAlt size={24} />
+                </div>
+              </a>
+              <a
+                href="tel:+9779851155689"
+                className="font-semibold text-lg hover:underline"
+              >
+                +977 9851155689
+              </a>
               <p className="text-sm opacity-90">Contact us</p>
             </div>
 
             {/* Visit Us */}
             <div className="flex flex-col items-center">
-              <div className="bg-[#2F8DCC] p-4 rounded-full mb-4 hover:scale-105 transition-transform">
-                <FaMapMarkerAlt size={24} />
-              </div>
+              <a
+                href="https://www.google.com/maps/place/Ticket+Kaksha+Travel+and+Tours+Pvt+Ltd/@27.7193648,85.3460175,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb19007392535d:0xcbf75aeb88fa5d6!8m2!3d27.7193601!4d85.3485924!16s%2Fg%2F11lcln9skf?entry=ttu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="bg-[#2F8DCC] p-4 rounded-full mb-4 hover:scale-105 transition-transform text-white">
+                  <FaMapMarkerAlt size={24} />
+                </div>
+              </a>
+
               <h3 className="font-semibold text-lg text-center">
                 Boudhanath Sadak, Kathmandu, Nepal
               </h3>
               <p className="text-sm opacity-90 mb-4">Visit us</p>
-              
+
               {/* Social Media Links */}
               <div className="flex space-x-4">
                 <a
-                  href="https://www.facebook.com/karmasilaenterprises"
+                  href="https://www.facebook.com/ticketkaksha"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="opacity-80 hover:opacity-100 hover:text-blue-700 transition-all"
@@ -52,7 +66,7 @@ const Footer = () => {
                   <FaFacebook size={20} />
                 </a>
                 <a
-                  href="https://www.instagram.com/karmasila_enterprises/"
+                  href="https://www.instagram.com/ticketkaksha/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="opacity-80 hover:opacity-100 hover:text-pink-300 transition-all"
@@ -61,7 +75,7 @@ const Footer = () => {
                   <FaInstagram size={20} />
                 </a>
                 <a
-                  href="viber://chat?number=+9779851352013"
+                  href="viber://chat?number=+9779851155689"
                   className="opacity-80 hover:opacity-100 hover:text-purple-300 transition-all"
                   aria-label="Viber"
                 >
@@ -72,10 +86,23 @@ const Footer = () => {
 
             {/* Email Us */}
             <div className="flex flex-col items-center">
-              <div className="bg-[#2F8DCC] p-4 rounded-full mb-4 hover:scale-105 transition-transform">
-                <FaEnvelope size={24} />
-              </div>
-              <h3 className="font-semibold text-lg">ticketkaksha@gmail.com</h3>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=mgmt@ticketkaksha.com.np"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="bg-[#2F8DCC] p-4 rounded-full mb-4 hover:scale-105 transition-transform text-white">
+                  <FaEnvelope size={24} />
+                </div>
+              </a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=mgmt@ticketkaksha.com.np"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-lg hover:underline"
+              >
+                mgmt@ticketkaksha.com.np
+              </a>
               <p className="text-sm opacity-90">Email us</p>
             </div>
           </div>
