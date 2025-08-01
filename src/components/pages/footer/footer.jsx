@@ -40,14 +40,15 @@ const Footer = () => {
             {/* Visit Us */}
             <div className="flex flex-col items-center">
               <a
-                href="https://www.google.com/maps/place/Ticket+Kaksha+Travel+and+Tours+Pvt+Ltd/@27.7193648,85.3460175,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb19007392535d:0xcbf75aeb88fa5d6!8m2!3d27.7193601!4d85.3485924!16s%2Fg%2F11lcln9skf?entry=ttu"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="bg-[#2F8DCC] p-4 rounded-full mb-4 hover:scale-105 transition-transform text-white">
-                  <FaMapMarkerAlt size={24} />
-                </div>
-              </a>
+  href="https://www.google.com/maps/search/?api=1&query=Ticket+Kaksha+Travel+and+Tours+Pvt+Ltd"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <div className="bg-[#2F8DCC] p-4 rounded-full mb-4 hover:scale-105 transition-transform text-white">
+    <FaMapMarkerAlt size={24} />
+  </div>
+</a>
+
 
               <h3 className="font-semibold text-lg text-center">
                 Boudhanath Sadak, Kathmandu, Nepal
