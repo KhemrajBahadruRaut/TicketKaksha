@@ -4,6 +4,7 @@ import Home from '../components/home/home'
 import AdminPanel from '../Admin/AdminPanel'
 import AdminLogin from '../Admin/AdminLogin'
 import ProtectedRoute from './ProtectedRoute'
+import CsrSection from '../components/pages/csr/csrsection'
 
 const MyRoutes = () => {
   return (
@@ -22,6 +23,7 @@ const MyRoutes = () => {
              <Route
             path="/admin"
             element={<AdminPanel/>}/>
+
         </Routes>
     </BrowserRouter>
   ) 
