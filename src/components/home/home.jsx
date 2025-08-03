@@ -7,7 +7,7 @@ import PopularDestinations from "../pages/destinations/PopularDestinations"
 import Footer from "../pages/footer/footer"
 import Services from "../pages/services/Services"
 import GetTestimonials from "../pages/testimonials/GetTestimonials"
-import Testimonials from "../pages/testimonials/Testimonials"
+// import Testimonials from "../pages/testimonials/Testimonials"
 
 
 

@@ -126,7 +126,7 @@ const Footer = () => {
             </a>
             <p className=" mt-2">
               © {new Date().getFullYear()}{" "}
-              <span className="font-serif">Ticket</span>{" "}
+              <span className="font-sans">टिकट</span>{" "}
               <span className="font-sans">कक्ष</span>. All rights reserved.
             </p>
           </div>

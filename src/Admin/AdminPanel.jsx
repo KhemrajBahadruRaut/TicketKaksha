@@ -12,6 +12,9 @@ import Contacts from './contacts/Contacts';
 import Testimonials from './Testimonials/Testimonials';
 import ActivityTimeline from './ActivityTimeline';
 import Destination from './destinations/Destination';
+import AboutUs from './AboutUs/AdminAboutUs';
+import { BsTextParagraph } from "react-icons/bs";
+import AdminAboutUs from './AboutUs/AdminAboutUs';
 
 const AdminPanel = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -93,6 +96,22 @@ const AdminPanel = () => {
           </button>
 
           <button
+            onClick={() => handleTabClick('about')}
+            className={`flex items-center w-full p-4 transition-colors duration-200 ${activeTab === 'about' ? 'bg-[#245da3]' : 'hover:bg-[#3a7dc4]'}`}
+          >
+           <BsTextParagraph className="text-lg"/>
+            {isSidebarOpen && <span className="ml-4">About us</span>}
+          </button>
+
+          <button
+            onClick={() => handleTabClick('about')}
+            className={`flex items-center w-full p-4 transition-colors duration-200 ${activeTab === 'about' ? 'bg-[#245da3]' : 'hover:bg-[#3a7dc4]'}`}
+          >
+           <BsTextParagraph className="text-lg"/>
+            {isSidebarOpen && <span className="ml-4">CSR</span>}
+          </button>
+
+          <button
             onClick={() => handleTabClick('contacts')}
             className={`flex items-center w-full p-4 transition-colors duration-200 ${activeTab === 'contacts' ? 'bg-[#245da3]' : 'hover:bg-[#3a7dc4]'}`}
           >
@@ -159,6 +178,7 @@ const AdminPanel = () => {
                 <ActivityTimeline />
               </div>
             )}
+            {activeTab === 'about' && <AdminAboutUs />}
             {activeTab === 'contacts' && <Contacts />}
             {activeTab === 'destinations.list' && <Destination />}
             {activeTab === 'testimonials' && <Testimonials />}

@@ -76,26 +76,35 @@ const Testimonials = () => {
     }
   };
 
-  const handleDelete = async id => {
-    if (!window.confirm('Are you sure you want to delete this testimonial?')) return;
+const handleDelete = async (id) => {
+  if (!window.confirm('Are you sure you want to delete this testimonial?')) return;
 
-    try {
-      const res = await fetch(DELETE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id }),
-      });
-      const result = await res.json();
-      if (result.success) {
-        setTestimonials(prev => prev.filter(t => t.id !== id));
-      } else {
-        alert(result.message || 'Failed to delete testimonial.');
-      }
-    } catch (err) {
-      alert('Network error while deleting testimonial.');
-      console.error('Delete error:', err);
+  try {
+    const res = await fetch(DELETE_URL, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ id }),
+    });
+
+    if (!res.ok) {
+      throw new Error('Network response was not ok');
     }
-  };
+
+    const result = await res.json();
+    
+    if (result.success) {
+      setTestimonials(prev => prev.filter(t => t.id !== id));
+    } else {
+      alert(result.message || 'Failed to delete testimonial.');
+    }
+  } catch (err) {
+    console.error('Delete error:', err);
+    alert('Error deleting testimonial. Please check console for details.');
+  }
+};
 
 return (
     <div className="container mx-auto p-4">

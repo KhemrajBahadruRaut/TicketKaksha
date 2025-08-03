@@ -65,7 +65,7 @@ const Nav = () => {
       }
     `}
           >
-            <span style={{ fontFamily: "yeseva" }} className="">Ticket</span> <span style={{ fontFamily: "gotu" }}>कक्ष</span> 
+            <span style={{ fontFamily: "gotu" }} className="">टिकट</span> <span style={{ fontFamily: "gotu" }}>कक्ष</span> 
           </span>
         </div>
 

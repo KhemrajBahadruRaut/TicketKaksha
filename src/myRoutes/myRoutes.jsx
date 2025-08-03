@@ -12,16 +12,16 @@ const MyRoutes = () => {
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/adminlogin" element={<AdminLogin />} />
-          {/* <Route
+          <Route
             path="/admin"
             element={
               <ProtectedRoute>
                 <AdminPanel />
               </ProtectedRoute>
-            } /> */}
-             <Route
+            } />
+             {/* <Route
             path="/admin"
-            element={<AdminPanel/>}/>
+            element={<AdminPanel/>}/> */}
         </Routes>
     </BrowserRouter>
   ) 
