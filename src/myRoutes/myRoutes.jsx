@@ -21,7 +21,9 @@ const MyRoutes = () => {
             } />
              {/* <Route
             path="/admin"
+
             element={<AdminPanel/>}/> */}
+
         </Routes>
     </BrowserRouter>
   ) 

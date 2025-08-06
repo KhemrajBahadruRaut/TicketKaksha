@@ -3,6 +3,7 @@ import Nav from "../nav/nav"
 import AboutUs from "../pages/AboutUS/AboutUs"
 import Banners from "../pages/banners/Banners"
 import ContactForm from "../pages/contactForm/ContactForm"
+import CsrCards from "../pages/csr/csrsection"
 import PopularDestinations from "../pages/destinations/PopularDestinations"
 import Footer from "../pages/footer/footer"
 import Services from "../pages/services/Services"
@@ -23,6 +24,7 @@ const Home = () => {
        <GetTestimonials />
        <Services/>
        <Banners/>
+       <CsrCards/>
        <PopularDestinations/>
        <ContactForm/>
        <Footer/>
