@@ -56,9 +56,9 @@ const Footer = () => {
   href="https://www.google.com/maps/search/?api=1&query=Ticket+Kaksha+Travel+and+Tours+Pvt+Ltd"
   target="_blank"
   rel="noopener noreferrer"
-  title="Visit us on Google Maps"
+  title="Visit us on Google Maps" 
 >
-                Boudhanath Sadak, chabahil - Kathmandu, Nepal
+                Boudhanath Sadak, Chabahil - Kathmandu, Nepal
                 </a>
               </h3>
               <p className="text-sm opacity-90 mb-4">Visit us</p>

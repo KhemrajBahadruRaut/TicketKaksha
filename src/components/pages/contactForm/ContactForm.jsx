@@ -15,16 +15,16 @@ getCountries().forEach((country) => {
 // XSS Protection utilities
 const sanitizeInput = (input) => {
   if (typeof input !== 'string') return '';
-  
-  // Remove dangerous characters and patterns
+
   return input
-    .replace(/[<>\"'&]/g, '') // Remove HTML/script injection chars
-    .replace(/javascript:/gi, '') // Remove javascript: protocol
-    .replace(/on\w+\s*=/gi, '') // Remove event handlers
-    .replace(/data:/gi, '') // Remove data: protocol
-    .replace(/vbscript:/gi, '') // Remove vbscript: protocol
-    .trim();
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/javascript:/gi, "")
+    .replace(/on\w+\s*=/gi, "")
+    .replace(/vbscript:/gi, "")
+    .replace(/data:/gi, "");
 };
+
 
 const validateEmail = (email) => {
   // More restrictive email validation
@@ -140,7 +140,7 @@ const ContactForm = () => {
         break;
       case 'message':
         // Sanitize message content
-        sanitizedValue = sanitizeInput(value).substring(0, 1000);
+sanitizedValue = sanitizeInput(value).slice(0, 1000);
         break;
       default:
         sanitizedValue = sanitizeInput(value);
